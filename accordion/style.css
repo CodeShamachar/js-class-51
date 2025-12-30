@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Accordion wrapper */
+.accordion {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* 🔥 প্রতিটা item এর মাঝে gap */
+}
+
+/* Card style item */
+.accordion-item {
+  background: #fffffff2;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #0000001f;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover floating effect */
+.accordion-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px #0000002e;
+}
+
+/* Header */
+.accordion-header {
+  user-select: none;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f5f7ff, #ffffff);
+}
+
+/* Icon */
+.icon {
+  width: 32px;
+  height: 32px;
+  background: #667eea;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Body */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-body p {
+  padding: 0 22px 22px;
+  color: #444;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* Active state */
+.accordion-item.active .icon {
+  transform: rotate(180deg);
+  background: #764ba2;
+}
